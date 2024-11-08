@@ -8,12 +8,10 @@ int rounds = 0;
 while (playAgain)
 {
 
-    game.IsInitialDealDone = false;
     game.PlayerDraw();
     game.DealerDraw();
     game.PlayerDraw();
     game.DealerDraw();
-    game.IsInitialDealDone = true;
 
     PrintCards();
 
