@@ -1,4 +1,4 @@
-﻿namespace BlackJack;
+﻿namespace BlackJack.Models;
 public class Deck
 {
     private int _nrOfDecks;
@@ -8,7 +8,7 @@ public class Deck
     public Deck(int nrOfDecks)
     {
         _nrOfDecks = nrOfDecks;
- 
+
     }
 
     public void ResetAndShuffle()

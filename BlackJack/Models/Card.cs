@@ -1,4 +1,4 @@
-﻿namespace BlackJack;
+﻿namespace BlackJack.Models;
 public class Card
 {
     public int Value { get; set; }
@@ -39,10 +39,10 @@ public class Card
 
         string suit = Suit switch
         {
-            SuitType.Club => "🦄",
-            SuitType.Diamond => "🐱‍",
-            SuitType.Heart => "👽",
-            SuitType.Spades => "🐸",
+            SuitType.Club => "Klöver",
+            SuitType.Diamond => "Ruter",
+            SuitType.Heart => "Hjärter",
+            SuitType.Spades => "Spader",
             _ => throw new ApplicationException()
         };
 

@@ -1,3 +1,6 @@
+using BlackJack.GameRules;
+using BlackJack.Models;
+
 namespace BlackJack;
 
 public class Game
@@ -7,7 +10,7 @@ public class Game
     public Deck Deck { get; set; }
     public GameStatus Status { get; set; }
 
-    private StateHandler _stateHandler = RuleFactory.GetBlackJackRules();
+    private StatusHandler _stateHandler = RuleFactory.GetBlackJackRules();
 
     public Game()
     {
@@ -28,13 +31,13 @@ public class Game
     public void PlayerDraw()
     {
         Player.Hand.Add(Deck.Draw());
-        Status = _stateHandler.HandleRequest(Player, Dealer);
+        Status = _stateHandler.HandleStatus(Player, Dealer);
      
     }
 
     public void DealerDraw()
     {
         Dealer.Hand.Add(Deck.Draw());
-        Status = _stateHandler.HandleRequest(Player, Dealer); 
+        Status = _stateHandler.HandleStatus(Player, Dealer); 
     }
 }

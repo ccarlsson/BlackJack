@@ -1,4 +1,5 @@
 ﻿using BlackJack;
+using BlackJack.Models;
 
 Game game = new Game();
 bool playAgain = true;

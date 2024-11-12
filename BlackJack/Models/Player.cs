@@ -1,4 +1,4 @@
-﻿namespace BlackJack;
+﻿namespace BlackJack.Models;
 public class Player
 {
     public List<Card> Hand { get; set; } = new List<Card>();

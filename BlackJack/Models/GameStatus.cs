@@ -1,4 +1,4 @@
-﻿namespace BlackJack;
+﻿namespace BlackJack.Models;
 
 public enum GameStatus
 {
