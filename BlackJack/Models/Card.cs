@@ -29,11 +29,11 @@ public class Card
     {
         string value = Value switch
         {
-            1 => "Ace",
+            1 => "Ess",
             < 11 => Value.ToString(),
-            11 => "Jack",
-            12 => "Queen",
-            13 => "King",
+            11 => "Knekt",
+            12 => "Dam",
+            13 => "Kung",
             _ => throw new ApplicationException("Value of card is to high")
         };
 

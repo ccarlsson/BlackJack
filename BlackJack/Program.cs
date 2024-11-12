@@ -12,7 +12,6 @@ while (playAgain)
     game.PlayerDraw();
     game.DealerDraw();
     game.PlayerDraw();
-    game.DealerDraw();
 
     PrintCards();
 
@@ -75,6 +74,7 @@ void HandlePlayer()
 
 void HandleDealer()
 {
+    game.CheckStatus();
     while (game.Status == GameStatus.Playing)
     {
         game.DealerDraw();

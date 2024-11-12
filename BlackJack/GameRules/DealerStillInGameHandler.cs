@@ -7,7 +7,7 @@ public class DealerStillInGameHandler : StatusHandler
     public override GameStatus HandleStatus(Player player, Player dealer)
     {
 
-        if (dealer.Hand.Count <= 2 || dealer.BestValue <= 16)
+        if (dealer.Hand.Count < 2 || dealer.BestValue <= 16)
         {
             return GameStatus.Playing;
         }

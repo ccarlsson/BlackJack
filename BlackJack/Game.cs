@@ -31,13 +31,17 @@ public class Game
     public void PlayerDraw()
     {
         Player.Hand.Add(Deck.Draw());
-        Status = _stateHandler.HandleStatus(Player, Dealer);
-     
+        CheckStatus();
     }
 
     public void DealerDraw()
     {
         Dealer.Hand.Add(Deck.Draw());
-        Status = _stateHandler.HandleStatus(Player, Dealer); 
+        CheckStatus();
+    }
+
+    public void CheckStatus()
+    {
+        Status = _stateHandler.HandleStatus(Player, Dealer);
     }
 }
