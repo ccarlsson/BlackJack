@@ -54,13 +54,8 @@ public class Player
             return sum;
         }
     }
-    public int BestValue
-    {
-        get
-        {
-            return HighValue > 21 ? LowValue : HighValue;
-        }
-    }
+    public int BestValue => 
+        HighValue > 21 ? LowValue : HighValue;
 
     public void Reset()
     {

@@ -1,30 +1,15 @@
 ﻿namespace BlackJack.Models;
-public class Card
+public class Card(int value, SuitType suit)
 {
-    public int Value { get; set; }
-    public SuitType Suit { get; set; }
-    public int BlackJackValue
-    {
-        get
-        {
-            if (Value == 1)
-            {
-                return 11;
-            }
-            else if (Value > 9)
-            {
-                return 10;
-            }
-            return Value;
-        }
-    }
+    public int Value { get; set; } = value;
+    public SuitType Suit { get; set; } = suit;
 
-    public Card(int value, SuitType suit)
-    {
-        Value = value;
-        Suit = suit;
-    }
-
+    public int BlackJackValue => Value switch {
+        1 => 11,
+        > 9 => 10,
+        _ => Value
+    };
+        
     public override string ToString()
     {
         string value = Value switch

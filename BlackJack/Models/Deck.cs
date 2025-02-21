@@ -1,15 +1,9 @@
 ﻿namespace BlackJack.Models;
-public class Deck
+public class Deck(int nrOfDecks)
 {
-    private int _nrOfDecks;
+    private int _nrOfDecks = nrOfDecks;
     private List<Card> _cards = new List<Card>();
     private readonly Random rng = new();
-
-    public Deck(int nrOfDecks)
-    {
-        _nrOfDecks = nrOfDecks;
-
-    }
 
     public void ResetAndShuffle()
     {

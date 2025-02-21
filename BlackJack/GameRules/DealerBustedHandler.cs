@@ -11,8 +11,8 @@ public class DealerBustedHandler : StatusHandler
         {
             return GameStatus.Won;
         }
-        if (NextSuccessor == null) throw new Exception("No successor found");
-
-        return NextSuccessor.HandleStatus(player, dealer);
+        return NextSuccessor == null ?
+            throw new Exception("No successor found") :
+            NextSuccessor.HandleStatus(player, dealer);
     }
 }

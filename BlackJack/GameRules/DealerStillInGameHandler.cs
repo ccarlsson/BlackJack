@@ -12,7 +12,8 @@ public class DealerStillInGameHandler : StatusHandler
             return GameStatus.Playing;
         }
 
-        if (NextSuccessor == null) throw new Exception("No successor found");
-        return NextSuccessor.HandleStatus(player, dealer);
+        return NextSuccessor == null ?
+            throw new Exception("No successor found") :
+            NextSuccessor.HandleStatus(player, dealer);
     }
 }

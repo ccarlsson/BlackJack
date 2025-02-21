@@ -10,7 +10,9 @@ public class BlackJackHandler : StatusHandler
         {
             return GameStatus.BlackJack;
         }
-        if (NextSuccessor == null) throw new Exception("No successor found");
-        return NextSuccessor.HandleStatus(player, dealer);
+
+        return NextSuccessor == null ? 
+            throw new Exception("No successor found") : 
+            NextSuccessor.HandleStatus(player, dealer);
     }
 }
