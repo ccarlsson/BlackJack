@@ -11,8 +11,8 @@ public class BlackJackHandler : StatusHandler
             return GameStatus.BlackJack;
         }
 
-        return NextSuccessor == null ? 
-            throw new Exception("No successor found") : 
-            NextSuccessor.HandleStatus(player, dealer);
+        
+        return NextSuccessor?.HandleStatus(player, dealer)
+            ?? throw new InvalidOperationException("No successor found in the chain.");
     }
 }

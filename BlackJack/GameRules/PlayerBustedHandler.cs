@@ -3,8 +3,7 @@
 namespace BlackJack.GameRules;
 
 public class PlayerBustedHandler : StatusHandler
-{
-
+{ 
     public override GameStatus HandleStatus(Player player, Player dealer)
     {
         if (player.BestValue > 21)
@@ -12,8 +11,7 @@ public class PlayerBustedHandler : StatusHandler
             return GameStatus.Lost;
         }
         
-        return NextSuccessor == null ? 
-            throw new Exception("No successor found") : 
-            NextSuccessor.HandleStatus(player, dealer);
+        return NextSuccessor?.HandleStatus(player, dealer)
+            ?? throw new InvalidOperationException("No successor found in the chain.");
     }
 }
